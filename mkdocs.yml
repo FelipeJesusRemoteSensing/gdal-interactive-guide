@@ -2,6 +2,7 @@ site_name: GDAL Interactive Guide
 site_description: "Documentação interativa, exemplos reais de código e biblioteca de operadores para dominar GDAL/OGR e Python geoespacial."
 site_author: Felipe Jesus
 site_url: https://felipejesusremotesensing.github.io/gdal-interactive-guide/
+copyright: "Criado por Felipe Sousa de Jesus, com auxílio de inteligência artificial"
 
 theme:
   name: material
