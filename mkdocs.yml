@@ -1,0 +1,89 @@
+site_name: GDAL Interactive Guide
+site_description: "Documentação interativa, exemplos reais de código e biblioteca de operadores para dominar GDAL/OGR e Python geoespacial."
+site_author: Felipe Jesus
+site_url: https://felipejesusremotesensing.github.io/gdal-interactive-guide/
+
+theme:
+  name: material
+  language: pt-BR
+  palette:
+    scheme: slate
+    primary: custom
+    accent: cyan
+  font:
+    text: Space Grotesk
+    code: JetBrains Mono
+  icon:
+    logo: material/earth
+    repo: fontawesome/brands/github
+  features:
+    - navigation.instant
+    - navigation.tracking
+    - navigation.tabs
+    - navigation.tabs.sticky
+    - navigation.sections
+    - navigation.expand
+    - navigation.top
+    - search.suggest
+    - search.highlight
+    - search.share
+    - content.code.copy
+    - content.code.annotate
+    - content.tabs.link
+    - toc.follow
+
+extra_css:
+  - stylesheets/extra.css
+
+markdown_extensions:
+  - admonition
+  - pymdownx.details
+  - pymdownx.superfences
+  - pymdownx.highlight:
+      anchor_linenums: true
+      line_spans: __span
+      pygments_lang_class: true
+  - pymdownx.inlinehilite
+  - pymdownx.tabbed:
+      alternate_style: true
+  - pymdownx.emoji:
+      emoji_index: !!python/name:material.extensions.emoji.twemoji
+      emoji_generator: !!python/name:material.extensions.emoji.to_svg
+  - attr_list
+  - md_in_html
+  - tables
+  - toc:
+      permalink: true
+      toc_depth: 3
+
+plugins:
+  - search:
+      lang: pt
+
+nav:
+  - 🌍 Início: index.md
+  - 📖 Operações Básicas: operacoes-basicas.md
+  - 🗂️ Subseções do GDAL:
+    - Visão Geral: subsecoes/index.md
+    - 🗺️ Raster: subsecoes/raster.md
+    - 📐 Vetor: subsecoes/vetor.md
+    - 🔍 Informação: subsecoes/informacao.md
+    - 🔧 Utilitário: subsecoes/utilitario.md
+  - 🐍 Biblioteca Python:
+    - Visão Geral: python/index.md
+    - GDAL/OGR: python/gdal-ogr.md
+    - NumPy: python/numpy.md
+    - Rasterio: python/rasterio.md
+    - Shapely: python/shapely.md
+    - GeoPandas: python/geopandas.md
+    - Built-ins: python/builtins.md
+  - 🖥️ Biblioteca C++:
+    - Tutoriais & Exemplos: cpp/index.md
+    - Aplicativos (gdal/apps): cpp/apps.md
+    - Drivers (gdal/frmts): cpp/drivers.md
+
+extra:
+  social:
+    - icon: fontawesome/brands/github
+      link: https://github.com/FelipeJesusRemoteSensing/gdal-interactive-guide
+  generator: false

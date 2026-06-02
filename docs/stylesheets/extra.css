@@ -1,0 +1,528 @@
+/* ============================================================
+   GDAL Interactive Guide — Premium Dark/Neon Theme
+   MkDocs Material Custom Stylesheet
+   ============================================================ */
+
+/* ===== Google Fonts ===== */
+@import url('https://fonts.googleapis.com/css2?family=Syne:wght@400;600;700;800&display=swap');
+
+/* ===== CSS Custom Properties (Theme Overrides) ===== */
+:root {
+  /* Neon palette */
+  --neon-cyan: #22d3ee;
+  --neon-blue: #38bdf8;
+  --neon-purple: #a78bfa;
+  --neon-green: #34d399;
+  --neon-amber: #fbbf24;
+  --neon-rose: #fb7185;
+
+  /* Surfaces */
+  --surface: rgba(16, 24, 40, 0.7);
+  --surface-hover: rgba(22, 34, 56, 0.85);
+  --glass-border: rgba(56, 189, 248, 0.12);
+  --glass-border-hover: rgba(56, 189, 248, 0.45);
+  --radius: 12px;
+  --radius-lg: 20px;
+}
+
+/* ===== Material Slate Overrides ===== */
+[data-md-color-scheme="slate"] {
+  --md-default-bg-color: #060911;
+  --md-default-bg-color--light: #0d1117;
+  --md-default-bg-color--lighter: #101827;
+  --md-default-bg-color--lightest: #162038;
+
+  --md-primary-fg-color: #0d1117;
+  --md-primary-bg-color: #f0f6ff;
+  --md-accent-fg-color: #22d3ee;
+
+  --md-typeset-color: #f0f6ff;
+  --md-typeset-a-color: #38bdf8;
+
+  --md-code-bg-color: #0d1117;
+  --md-code-fg-color: #e2e8f0;
+
+  --md-footer-bg-color: #060911;
+  --md-footer-bg-color--dark: #040710;
+}
+
+/* ===== Background Grid Effect ===== */
+.md-main::before {
+  content: '';
+  position: fixed;
+  inset: 0;
+  background-image:
+    linear-gradient(rgba(56,189,248,0.02) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(56,189,248,0.02) 1px, transparent 1px);
+  background-size: 48px 48px;
+  pointer-events: none;
+  z-index: 0;
+}
+
+/* ===== Header / Tabs Bar ===== */
+.md-header {
+  background: rgba(6, 9, 17, 0.92) !important;
+  backdrop-filter: blur(16px);
+  -webkit-backdrop-filter: blur(16px);
+  border-bottom: 1px solid rgba(56, 189, 248, 0.08);
+}
+
+.md-tabs {
+  background: rgba(13, 17, 23, 0.95) !important;
+  border-bottom: 1px solid rgba(56, 189, 248, 0.06);
+}
+
+.md-tabs__link {
+  font-family: 'Space Grotesk', sans-serif !important;
+  font-weight: 500;
+  letter-spacing: 0.01em;
+  opacity: 0.6;
+  transition: all 0.25s ease;
+}
+
+.md-tabs__link:hover,
+.md-tabs__link--active {
+  opacity: 1;
+  color: var(--neon-cyan) !important;
+}
+
+/* ===== Typography ===== */
+.md-typeset h1 {
+  font-family: 'Syne', sans-serif !important;
+  font-weight: 800;
+  letter-spacing: -0.02em;
+  background: linear-gradient(135deg, #f0f6ff 0%, var(--neon-cyan) 50%, var(--neon-purple) 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+}
+
+.md-typeset h2 {
+  font-family: 'Syne', sans-serif !important;
+  font-weight: 700;
+  color: var(--neon-cyan);
+  border-bottom: 1px solid rgba(56, 189, 248, 0.12);
+  padding-bottom: 0.4em;
+}
+
+.md-typeset h3 {
+  font-family: 'Syne', sans-serif !important;
+  font-weight: 600;
+  color: var(--neon-purple);
+}
+
+/* ===== Navigation Sidebar ===== */
+.md-sidebar {
+  scrollbar-width: thin;
+  scrollbar-color: rgba(56,189,248,0.2) transparent;
+}
+
+.md-nav__link {
+  font-family: 'Space Grotesk', sans-serif !important;
+  transition: color 0.2s ease, padding-left 0.2s ease;
+}
+
+.md-nav__link:hover {
+  color: var(--neon-cyan) !important;
+  padding-left: 4px;
+}
+
+.md-nav__item--active > .md-nav__link {
+  color: var(--neon-cyan) !important;
+  font-weight: 600;
+}
+
+/* ===== Admonitions (Custom Neon Style) ===== */
+.md-typeset .admonition,
+.md-typeset details {
+  background: var(--surface) !important;
+  border: 1px solid var(--glass-border) !important;
+  border-radius: var(--radius) !important;
+  box-shadow: 0 4px 24px rgba(0, 0, 0, 0.3);
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
+  border-left: 4px solid var(--neon-cyan) !important;
+}
+
+.md-typeset .admonition.note,
+.md-typeset details.note {
+  border-left-color: var(--neon-blue) !important;
+}
+
+.md-typeset .admonition.tip,
+.md-typeset details.tip {
+  border-left-color: var(--neon-green) !important;
+}
+
+.md-typeset .admonition.warning,
+.md-typeset details.warning {
+  border-left-color: var(--neon-amber) !important;
+}
+
+.md-typeset .admonition.danger,
+.md-typeset details.danger {
+  border-left-color: var(--neon-rose) !important;
+}
+
+.md-typeset .admonition.example,
+.md-typeset details.example {
+  border-left-color: var(--neon-purple) !important;
+}
+
+/* ===== Code Blocks ===== */
+.md-typeset code {
+  border-radius: 6px;
+  background: rgba(13, 17, 23, 0.8);
+  border: 1px solid rgba(56, 189, 248, 0.1);
+  color: var(--neon-cyan);
+  font-size: 0.82em;
+  padding: 2px 6px;
+}
+
+.md-typeset pre {
+  border-radius: var(--radius) !important;
+  border: 1px solid rgba(56, 189, 248, 0.1) !important;
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.4);
+}
+
+.md-typeset pre > code {
+  border: none;
+  background: transparent;
+  color: inherit;
+  padding: 0;
+}
+
+/* Copy button */
+.md-clipboard {
+  color: rgba(56, 189, 248, 0.4) !important;
+  transition: color 0.2s ease;
+}
+
+.md-clipboard:hover {
+  color: var(--neon-cyan) !important;
+}
+
+/* ===== Content Tabs (pymdownx.tabbed) ===== */
+.md-typeset .tabbed-labels > label {
+  font-family: 'Space Grotesk', sans-serif !important;
+  font-weight: 500;
+  color: rgba(240, 246, 255, 0.5);
+  transition: all 0.25s ease;
+  border-bottom: 2px solid transparent;
+}
+
+.md-typeset .tabbed-labels > label:hover {
+  color: rgba(240, 246, 255, 0.8);
+}
+
+.md-typeset .tabbed-labels > label.tabbed-labels__label--active,
+.md-typeset .tabbed-labels > input:checked + label {
+  color: var(--neon-cyan) !important;
+  border-bottom-color: var(--neon-cyan) !important;
+}
+
+/* ===== Tables ===== */
+.md-typeset table:not([class]) {
+  background: var(--surface);
+  border: 1px solid var(--glass-border);
+  border-radius: var(--radius);
+  overflow: hidden;
+}
+
+.md-typeset table:not([class]) th {
+  background: rgba(34, 211, 238, 0.08);
+  color: var(--neon-cyan);
+  font-family: 'Space Grotesk', sans-serif;
+  font-weight: 600;
+  border-bottom: 1px solid rgba(56, 189, 248, 0.15);
+}
+
+.md-typeset table:not([class]) td {
+  border-bottom: 1px solid rgba(56, 189, 248, 0.06);
+}
+
+.md-typeset table:not([class]) tr:hover td {
+  background: rgba(56, 189, 248, 0.04);
+}
+
+/* ===== Search ===== */
+.md-search__input {
+  background: rgba(13, 17, 23, 0.9) !important;
+  border: 1px solid rgba(56, 189, 248, 0.15) !important;
+  border-radius: 8px !important;
+  font-family: 'Space Grotesk', sans-serif !important;
+}
+
+.md-search__input::placeholder {
+  color: rgba(136, 153, 180, 0.6);
+}
+
+.md-search-result__meta {
+  color: var(--neon-cyan);
+}
+
+.md-search-result__link:hover {
+  background: rgba(56, 189, 248, 0.06);
+}
+
+/* ===== Cards Grid (for index page) ===== */
+.cards-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  gap: 1.2rem;
+  margin: 2rem 0;
+}
+
+.glass-card {
+  background: var(--surface);
+  border: 1px solid var(--glass-border);
+  border-radius: var(--radius-lg);
+  padding: 1.5rem;
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
+  transition: all 0.3s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+  position: relative;
+  overflow: hidden;
+}
+
+.glass-card::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  border-radius: var(--radius-lg);
+  padding: 1px;
+  background: linear-gradient(135deg, rgba(56,189,248,0.15), transparent 50%, rgba(167,139,250,0.1));
+  -webkit-mask: linear-gradient(#fff 0 0) content-box, linear-gradient(#fff 0 0);
+  mask: linear-gradient(#fff 0 0) content-box, linear-gradient(#fff 0 0);
+  -webkit-mask-composite: xor;
+  mask-composite: exclude;
+  pointer-events: none;
+}
+
+.glass-card:hover {
+  border-color: var(--glass-border-hover);
+  transform: translateY(-4px);
+  box-shadow: 0 8px 32px rgba(34, 211, 238, 0.08);
+}
+
+.glass-card .card-icon {
+  font-size: 2rem;
+  margin-bottom: 0.8rem;
+}
+
+.glass-card .card-title {
+  font-family: 'Syne', sans-serif;
+  font-weight: 700;
+  font-size: 1.1rem;
+  color: #f0f6ff;
+  margin-bottom: 0.4rem;
+}
+
+.glass-card .card-desc {
+  font-size: 0.88rem;
+  color: #8899b4;
+  line-height: 1.5;
+}
+
+/* ===== Hero Section (index page) ===== */
+.hero-section {
+  text-align: center;
+  padding: 3rem 1rem 2rem;
+  position: relative;
+}
+
+.hero-section::before {
+  content: '';
+  position: absolute;
+  top: -60px;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 600px;
+  height: 300px;
+  background: radial-gradient(ellipse, rgba(56,189,248,0.1) 0%, rgba(167,139,250,0.05) 50%, transparent 70%);
+  pointer-events: none;
+}
+
+.hero-eyebrow {
+  display: inline-block;
+  font-family: 'JetBrains Mono', monospace;
+  font-size: 0.72rem;
+  letter-spacing: 0.2em;
+  text-transform: uppercase;
+  color: var(--neon-cyan);
+  background: rgba(34,211,238,0.08);
+  border: 1px solid rgba(34,211,238,0.2);
+  padding: 4px 14px;
+  border-radius: 20px;
+  margin-bottom: 1.2rem;
+}
+
+.hero-title {
+  font-family: 'Syne', sans-serif;
+  font-size: 3rem;
+  font-weight: 800;
+  letter-spacing: -0.03em;
+  line-height: 1.1;
+  margin-bottom: 1rem;
+  background: linear-gradient(135deg, #f0f6ff 0%, var(--neon-cyan) 60%, var(--neon-purple) 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+}
+
+.hero-subtitle {
+  font-size: 1.1rem;
+  color: #8899b4;
+  max-width: 640px;
+  margin: 0 auto 2rem;
+  line-height: 1.6;
+}
+
+.hero-stats {
+  display: flex;
+  justify-content: center;
+  gap: 3rem;
+  flex-wrap: wrap;
+}
+
+.hero-stat {
+  text-align: center;
+}
+
+.hero-stat-num {
+  display: block;
+  font-family: 'Syne', sans-serif;
+  font-size: 2rem;
+  font-weight: 800;
+  color: var(--neon-cyan);
+}
+
+.hero-stat-label {
+  font-size: 0.8rem;
+  color: #8899b4;
+  text-transform: uppercase;
+  letter-spacing: 0.1em;
+}
+
+/* ===== Category Badges ===== */
+.badge {
+  display: inline-block;
+  font-family: 'JetBrains Mono', monospace;
+  font-size: 0.7rem;
+  font-weight: 500;
+  padding: 3px 10px;
+  border-radius: 12px;
+  letter-spacing: 0.04em;
+  text-transform: uppercase;
+}
+
+.badge-raster {
+  color: var(--neon-cyan);
+  background: rgba(34, 211, 238, 0.1);
+  border: 1px solid rgba(34, 211, 238, 0.2);
+}
+
+.badge-vetor {
+  color: var(--neon-purple);
+  background: rgba(167, 139, 250, 0.1);
+  border: 1px solid rgba(167, 139, 250, 0.2);
+}
+
+.badge-info {
+  color: var(--neon-green);
+  background: rgba(52, 211, 153, 0.1);
+  border: 1px solid rgba(52, 211, 153, 0.2);
+}
+
+.badge-util {
+  color: var(--neon-amber);
+  background: rgba(251, 191, 36, 0.1);
+  border: 1px solid rgba(251, 191, 36, 0.2);
+}
+
+.badge-python {
+  color: var(--neon-rose);
+  background: rgba(251, 113, 133, 0.1);
+  border: 1px solid rgba(251, 113, 133, 0.2);
+}
+
+.badge-cpp {
+  color: var(--neon-blue);
+  background: rgba(56, 189, 248, 0.1);
+  border: 1px solid rgba(56, 189, 248, 0.2);
+}
+
+/* ===== Tags ===== */
+.tag-list {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 6px;
+  margin-top: 8px;
+}
+
+.tag {
+  font-family: 'JetBrains Mono', monospace;
+  font-size: 0.68rem;
+  color: rgba(136, 153, 180, 0.8);
+  background: rgba(56, 189, 248, 0.06);
+  border: 1px solid rgba(56, 189, 248, 0.08);
+  padding: 2px 8px;
+  border-radius: 6px;
+}
+
+/* ===== Scrollbar ===== */
+::-webkit-scrollbar {
+  width: 6px;
+  height: 6px;
+}
+
+::-webkit-scrollbar-track {
+  background: transparent;
+}
+
+::-webkit-scrollbar-thumb {
+  background: rgba(56, 189, 248, 0.2);
+  border-radius: 3px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: rgba(56, 189, 248, 0.4);
+}
+
+/* ===== Footer ===== */
+.md-footer {
+  border-top: 1px solid rgba(56, 189, 248, 0.06);
+}
+
+.md-footer-meta {
+  background: rgba(6, 9, 17, 0.95) !important;
+}
+
+/* ===== Responsive ===== */
+@media (max-width: 768px) {
+  .hero-title { font-size: 2rem; }
+  .hero-stats { gap: 1.5rem; }
+  .hero-stat-num { font-size: 1.5rem; }
+  .cards-grid { grid-template-columns: 1fr; }
+}
+
+/* ===== Details/Summary for C++ explorer ===== */
+.md-typeset details.cpp-file {
+  border-left-color: var(--neon-blue) !important;
+}
+
+.md-typeset details.cpp-file > summary {
+  font-family: 'JetBrains Mono', monospace;
+  font-size: 0.88rem;
+  color: var(--neon-blue);
+}
+
+.md-typeset details.cpp-file > summary:hover {
+  color: var(--neon-cyan);
+}
+
+/* ===== Print Styles ===== */
+@media print {
+  .hero-section::before,
+  .md-main::before { display: none; }
+}
